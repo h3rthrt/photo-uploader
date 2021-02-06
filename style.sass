@@ -1,0 +1,110 @@
+@import "./vars"
+
+*
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+body
+    background: #666
+
+input[type=file]
+    display: none
+
+.container
+    padding-top: 5rem
+    width: 800px
+    margin: 0 auto
+
+.card
+    border-radius: 6px
+    background: #fff
+    padding: 1rem
+    box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.2)
+
+.btn
+    border-radius: 12px
+    padding: 4px 18px
+    font-weight: 700
+    background: transparent
+    border: 1px solid $green
+    color: $green
+    outline: none
+    cursor: pointer
+    text-transform: uppercase
+    transition: ease-in-out .2s
+    &:hover
+        background: #d3f0e0
+    &.primary
+        background: $green
+        color: white
+        &:hover
+            background: #7bcf9e
+    &:nth-child(2)
+        margin-right: 12px
+
+.preview
+    display: flex
+    flex-wrap: wrap
+    padding: .5rem
+    img
+        width: 180px
+        height: auto
+        display: block
+    &__image
+        position: relative
+        margin-bottom: .5rem
+        margin-right: .5rem
+        width: 180px
+        height: 100%
+        overflow: hidden
+        &.removing
+            transform: scale(0)
+            transition: transform .3s
+        &:hover .preview__remove
+            opacity: 1
+        &:hover .preview__info
+            bottom: 0
+            opacity: 1
+    &__remove
+        opacity: 0
+        width: 20px
+        height: 20px
+        position: absolute
+        right: 0
+        top: 0
+        font-weight: bold
+        background: rgba(255, 255, 255, .5)
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        transition: opacity .22s
+    &__info
+        display: flex
+        flex-wrap: wrap
+        position: absolute
+        right: 0
+        opacity: 0
+        bottom: -10px
+        left: 0
+        height: auto
+        font-size: .8rem
+        background: rgba(255, 255, 255, .7)
+        justify-content: space-between
+        padding: 0 5px
+        transition: ease-in-out .22s
+        span:nth-child(1)
+            white-space: pre-line
+            width: 69%
+        span:nth-child(2)
+            width: 30%
+            text-align: right
+    &__info-progress
+        position: absolute
+        left: 0
+        top: 0
+        bottom: 0
+        background: $green
+        text-align: center
+        transition: width .22s
+        width: 30%
+        opacity: 80%
